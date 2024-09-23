@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 
 ## Load trained model, scaler pickle, onehot pickle file
 
-model=tf.keras.models.load_model('model_1.h5')
+model=tf.keras.models.load_model('model.h5')
 
 ## load the encoder and scaler
 
@@ -52,14 +52,13 @@ input_data = pd.DataFrame({
 })
 
 # One hot encode Geography
-geo_encoded = label_encoder_geo.transform([[input_data['Geography']]]).toarray()
+geo_encoded = label_encoder_geo.transform([[geography]]).toarray()
 geo_encoded_df = pd.DataFrame(geo_encoded, columns=label_encoder_geo.get_feature_names_out(['Geography']))
 
 
 #combine one-hot encoded columns with input data
 
 input_data = pd.concat([input_data.reset_index(drop=True), geo_encoded_df], axis=1)
-
 #Scaling the input data
 
 input_data_scaled = scaler.transform(input_data)
@@ -69,7 +68,7 @@ input_data_scaled = scaler.transform(input_data)
 prediction = model.predict(input_data_scaled)
 prediction_prob = prediction[0][0]
 
-st.write(f'Churn Probability: {prediction_prob:.2f} * 100,'%'')
+st.write(f'Churn Probability: {prediction_prob:.2f}')
 
 if prediction_prob > 0.5:
     st.write('The customer is likely to churn.')
