@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 
 ## Load trained model, scaler pickle, onehot pickle file
 
-model=load_model('model.h5')
+model=load_model("model.h5")
 
 ## load the encoder and scaler
 
