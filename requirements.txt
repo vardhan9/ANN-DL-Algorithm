@@ -4,4 +4,4 @@ numpy
 scikit-learn
 tensorboard
 matplotlib
-keras==2.15.0
+keras
