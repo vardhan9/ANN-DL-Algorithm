@@ -6,3 +6,10 @@ conda activate M:\Learning_Workspace\AI\AI_Projects\KrishNaikProjects\End-to-End
 
 3. create requirements.txt and fill the libraries that needs to be installed then 
 pip install -r requirements.txt
+
+
+
+
+Issue: 
+Planned to deploy this app in streamlit community cloud cloud
+cloud is unable to find tensorflow package. And deployment didnot move forward
