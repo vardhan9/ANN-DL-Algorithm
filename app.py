@@ -1,6 +1,6 @@
+import tensorflow as tf
 import pandas as pd
 import numpy as np
-from tensorflow.keras.models import load_model
 import pickle
 import streamlit as st
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 
 ## Load trained model, scaler pickle, onehot pickle file
 
-model=load_model("model.h5")
+model=tf.keras.models.load_model('model.h5')
 
 ## load the encoder and scaler
 
