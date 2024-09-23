@@ -4,11 +4,12 @@ import numpy as np
 import pickle
 import streamlit as st
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
+from keras.losses import binary_crossentropy
 
 
 ## Load trained model, scaler pickle, onehot pickle file
 
-model=tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('model.h5', custom_objects={'binary_crossentropy': binary_crossentropy})
 
 ## load the encoder and scaler
 
