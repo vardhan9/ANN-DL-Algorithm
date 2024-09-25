@@ -13,3 +13,6 @@ pip install -r requirements.txt
 Issue: 
 Planned to deploy this app in streamlit community cloud cloud
 cloud is unable to find tensorflow package. And deployment didnot move forward
+
+
+work on regression streamlit app - having some data issue while inputting the data
