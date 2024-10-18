@@ -15,4 +15,4 @@ Planned to deploy this app in streamlit community cloud cloud
 Had an issue while deploying the app in streamlit community (deserilaization with model.h5), Streamlit cloud has Keras==3.6.0 version and the model.h5
 is built and saved with keras:==3.5.0. Solved this by updating keras to 3.6 in my local venv and saved the model.h5.
 
-work on regression streamlit app - having some data issue while inputting the data
+Both Classification and Regression models are built, Successfully deployed in Streamlit Cloud.
