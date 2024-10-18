@@ -36,6 +36,7 @@ tenure = st.slider('Tenure', 0, 10)
 num_of_products = st.slider('Number of Products', 1, 4)
 has_cr_card = st.selectbox('Has Credit Card', [0, 1])
 is_active_member = st.selectbox('Is Active Member', [0, 1])
+Exited = st.selectbox('Is Exited', [0, 1])
 
 # Prepare the input data
 input_data = pd.DataFrame({
@@ -47,6 +48,7 @@ input_data = pd.DataFrame({
     'NumOfProducts': [num_of_products],
     'HasCrCard': [has_cr_card],
     'IsActiveMember': [is_active_member],
+    'Exited': [Exited],
 })
 
 # One hot encode Geography
@@ -64,6 +66,6 @@ input_data_scaled = scaler.transform(input_data)
 #Predict churn
 
 prediction = model.predict(input_data_scaled)
-
-st.write(f'Predicted Salary: {prediction}')
+predicted_salary = prediction [0] [0]
+st.write(f'Predicted Salary:', round((predicted_salary),2), '€')
 
